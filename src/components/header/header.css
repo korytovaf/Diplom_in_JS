@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    padding: 10px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    background-color: white;
+    z-index: 1;
+}
+
+.button {
+    background-color: transparent;
+    border: 1px solid #696969;
+    border-radius: 3px;
+    color: #696969;
+    transition: color 0.4s, border 0.4s, padding 0.4s;
+}
+
+.button:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.header__search {
+    margin-left: auto;
+}
