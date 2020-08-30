@@ -1,7 +1,7 @@
 import React from "react";
 import './images.css';
-import {Link} from "react-router-dom";
 import Preloader from "../common/Preloader/Preloader";
+import Card from "./Card/Card";
 
 
 
@@ -16,12 +16,7 @@ const Images = (props) => {
             {
                 props.images.map((image) => {
                     return (
-                        <li key={image.id} className='imgWrapper' >
-                            <Link to={`/image/${image.id}`} className='img__link'>
-                                    <img className='img' src={image.urls.small} alt={image.alt_description}/>
-                            </Link>
-                        </li>
-
+                        <Card key={image.id} image={image} />
                     );
                 })
             }
@@ -30,3 +25,16 @@ const Images = (props) => {
 }
 
 export default Images
+
+
+
+/*
+<li key={image.id} className='image__wrapper' >
+    <Link to={`/image/${image.id}`} className='image__link'>
+    <img className='image_img' src={image.urls.small} alt={image.alt_description}/>
+</Link>
+<div className='image__data'>
+<div>{image.user.name}</div>
+<div>{image.likes}</div>
+</div>
+</li>*/

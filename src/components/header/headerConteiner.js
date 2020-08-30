@@ -41,7 +41,7 @@ class HeaderContainer extends React.Component {
 
     componentDidMount() {
 
-         if (this.code) {
+        if (this.code) {
             unsplash.auth.userAuthentication(this.code)
                 .then(res => res.json())
                 .then(json => {
@@ -56,13 +56,12 @@ class HeaderContainer extends React.Component {
                         });
                 });
         }
-
     }
 
 
     render() {
         return (
-            <Header getAuthentication={this.enterAuthorization} profileMi={this.props.profileMi} />
+            <Header path='/' getAuthentication={this.enterAuthorization} profileMi={this.props.profileMi}/>
         );
     }
 }
