@@ -1,6 +1,7 @@
 import React from "react";
-import './imagePage.css'
+import './Photo.css'
 import Preloader from "../common/Preloader/Preloader";
+import Heart from "../photos/Card/Hart";
 
 const ImagePage = (props) => {
 
@@ -8,8 +9,15 @@ const ImagePage = (props) => {
         return <Preloader />
     }
     return (
-        <div className='image'>
-            <img className='img' src={props.image.urls.regular} alt={props.image.alt_desckription}/>
+        <div className='photo'>
+            <img src={props.image.urls.regular} alt={props.image.alt_desckription}/>
+            <div className='photo__content'>
+                <h3 className='photo__name'>{props.image.user.name}</h3>
+                <div onClick={props.setLikedPhoto} className='photo__like'>
+                    <Heart width={20} height={18} fill={props.image.liked_by_user ? 'red': 'transparent'}/>
+                    <span>{props.image.likes}</span>
+                </div>
+            </div>
         </div>
     );
 }

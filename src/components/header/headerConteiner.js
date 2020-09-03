@@ -14,7 +14,7 @@ const instance = axios.create({
 const unsplash = new Unsplash({
     accessKey: "CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4",
     secret: "aXJI2FFI1YJW0DDPXoxyJJ2YFgG_ni0zAbMGw1kSwO4",
-    callbackUrl: "http://localhost:3001"
+    callbackUrl: "http://localhost:3000"
 });
 
 const authenticationUrl = unsplash.auth.getAuthenticationUrl([

@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
-import {photosReducers} from "./photos/redusers";
 import {authReducers} from "./auth/redusers";
+import photosReducers from "./photos/redusers";
 
 export default combineReducers({
     photos: photosReducers,

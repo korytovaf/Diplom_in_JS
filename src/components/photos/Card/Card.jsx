@@ -12,9 +12,11 @@ const Card = (props) => {
                 <img src={props.image.urls.small} alt={props.image.alt_description}/>
 
                 <div className='card__content'>
+
                     <h3 className='card__name'>{props.image.user.name}</h3>
+
                     <div className='card__like'>
-                        <Heart width={20} height={18}/>
+                        <Heart width={20} height={18} fill={props.image.liked_by_user ? 'red': 'transparent'}/>
                         <span>{props.image.likes}</span>
                     </div>
                 </div>
