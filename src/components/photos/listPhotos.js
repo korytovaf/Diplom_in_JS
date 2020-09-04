@@ -22,7 +22,6 @@ const ListPhotos = (props) => {
                     })
                 }
             </ul>
-            <button className='images__add' onClick={props.addPage}>Add</button>
         </div>
     );
 }

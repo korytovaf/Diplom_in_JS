@@ -27,14 +27,14 @@ export const setImage = (image, page) => ({
     payload: image, page
 })
 
-export const setUpdateImage = (liked_by_user) => ({
+export const setUpdateImage = (likes) => ({
     type: SET_UPDATE_IMAGE,
-    payload: {liked_by_user}
+    payload: {likes}
 })
 
-export const setLiked = like => ({
+export const setLiked = likes => ({
     type: SET_LIKED,
-    payload: like
+    payload: likes
 })
 
 

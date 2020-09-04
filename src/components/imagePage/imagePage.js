@@ -5,7 +5,7 @@ import Heart from "../photos/Card/Hart";
 
 const ImagePage = (props) => {
 
-    if (!props.image || props.itemId !== props.image.id) {
+    if (!props.image || props.photoId !== props.image.id) {
         return <Preloader />
     }
     return (
@@ -13,7 +13,7 @@ const ImagePage = (props) => {
             <img src={props.image.urls.regular} alt={props.image.alt_desckription}/>
             <div className='photo__content'>
                 <h3 className='photo__name'>{props.image.user.name}</h3>
-                <div onClick={props.setLikedPhoto} className='photo__like'>
+                <div onClick={props.likedClick} className='photo__like'>
                     <Heart width={20} height={18} fill={props.image.liked_by_user ? 'red': 'transparent'}/>
                     <span>{props.image.likes}</span>
                 </div>
@@ -22,3 +22,4 @@ const ImagePage = (props) => {
     );
 }
 export default ImagePage
+

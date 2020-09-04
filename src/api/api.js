@@ -16,3 +16,17 @@ export const getPhotos = (page = 1, per_page = 10) => {
         .then(response => response.data)
 }
 
+
+export const getImagePage = (photoId) => {
+    return instance
+        .get(`photos/${photoId}`)
+        .then(response => response.data)
+}
+
+
+export const getLiked = (photoId, token) => {
+    return instance
+        .post(`photos/${photoId}/like?access_token=${token}`)
+        .then(response => response.data)
+}
+

@@ -51,7 +51,6 @@ class ListPhotosContainer extends React.Component {
         return (
             <ListPhotos
                 images={this.props.images}
-                addPage={this.addPage}
             />
         );
     }

@@ -5,7 +5,6 @@ import Profile from "./components/profile/profile";
 import ImagePageContainer from "./components/imagePage/imagePageContainer";
 import './App.css';
 import HeaderContainer from "./components/header/headerConteiner";
-import {Redirect} from "react-router";
 
 
 const App = () => {
@@ -17,10 +16,10 @@ const App = () => {
                     <Route exact path='/' component={ListPhotoContainer}/>
                     <Route path='/image/:id'
                            render={({match}) => {
-                               return <ImagePageContainer itemId={match.params.id}/>
+                               return <ImagePageContainer photoId={match.params.id}/>
                            }}/>
                     <Route path='/profile/' component={Profile}/>
-                    <Redirect to='/'/>
+
                 </main>
 
             </div>

@@ -11,10 +11,11 @@ const initialState = {
 }
 
 const photosReducers = (state = initialState, action) => {
+    const stateCopy = {...state};
+
     switch (action.type) {
 
         case 'SET_IMAGES':
-            const stateCopy = {...state};
             stateCopy.images = [...state.images, ...action.payload];
             stateCopy.loading = true;
             return stateCopy;
@@ -35,7 +36,7 @@ const photosReducers = (state = initialState, action) => {
             return {...state, image: {...state.image, liked_by_user: action.payload.liked_by_user}};
 
         case 'SET_LIKED':
-            return {...state, like: action.payload}
+            return {...state, image: {...state.image, likes: action.payload}};
 
         default:
             return state
