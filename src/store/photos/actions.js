@@ -1,13 +1,20 @@
 export const SET_IMAGES = 'SET_IMAGES';
+export const SET_LOADING = 'SET_LOADING';
 export const SET_IMAGE = 'SET_IMAGE';
 export const SET_UPDATE_IMAGE = 'SET_UPDATE_IMAGE';
 export const SET_LIKED = 'SET_LIKED';
 export const SET_PAGE = 'SET_PAGE';
 
 
+
 export const setImages = images => ({
     type: SET_IMAGES,
     payload: images
+})
+
+export const setLoading = loading => ({
+    type: SET_LOADING,
+    payload: loading
 })
 
 export const setPage = page => ({

@@ -5,6 +5,7 @@ const initialState = {
     page: 1,
     per_page: 10,
     like: false,
+    loading: false,
 
 
 }
@@ -15,8 +16,13 @@ const photosReducers = (state = initialState, action) => {
         case 'SET_IMAGES':
             const stateCopy = {...state};
             stateCopy.images = [...state.images, ...action.payload];
+            stateCopy.loading = true;
             return stateCopy;
 
+            case 'SET_LOADING':
+            return {
+                ...state, loading: action.payload,
+            }
         case 'SET_PAGE':
             return {
                 ...state, page: action.payload,
