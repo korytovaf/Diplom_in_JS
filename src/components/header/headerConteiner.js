@@ -2,32 +2,8 @@ import React from "react";
 import './header.css';
 import Header from "./header";
 import {connect} from "react-redux";
-import Unsplash from "unsplash-js";
-import * as axios from "axios";
 import {setIsAuth, setProfileMi, setToken} from "../../store/auth/actions";
-
-
-const instance = axios.create({
-    baseURL: 'https://api.unsplash.com/',
-});
-
-const unsplash = new Unsplash({
-    accessKey: "CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4",
-    secret: "aXJI2FFI1YJW0DDPXoxyJJ2YFgG_ni0zAbMGw1kSwO4",
-    callbackUrl: "http://localhost:3000"
-});
-
-const authenticationUrl = unsplash.auth.getAuthenticationUrl([
-    "public",
-    "read_user",
-    "write_user",
-    "read_photos",
-    "write_photos",
-    "write_likes",
-    "write_followers",
-    "read_collections",
-    "write_collections"
-]);
+import {authenticationUrl, getAuthMi, unsplash} from "../../api/api";
 
 
 class HeaderContainer extends React.Component {
@@ -48,8 +24,7 @@ class HeaderContainer extends React.Component {
                     unsplash.auth.setBearerToken(json.access_token)
                     this.props.setToken(json.access_token)
 
-                    instance
-                        .get(`me?access_token=${json.access_token}`)
+                    getAuthMi(json.access_token)
                         .then(response => {
                             this.props.setProfileMi(response.data)
                             this.props.setIsAuth(true)

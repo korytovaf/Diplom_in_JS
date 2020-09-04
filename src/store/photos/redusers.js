@@ -20,7 +20,7 @@ const photosReducers = (state = initialState, action) => {
             stateCopy.loading = true;
             return stateCopy;
 
-            case 'SET_LOADING':
+        case 'SET_LOADING':
             return {
                 ...state, loading: action.payload,
             }
