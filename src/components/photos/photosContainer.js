@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import {setImages, setLoading, setPage} from "../../store/photos/actions";
-import ListPhotos from "./listPhotos";
+import {setAddedImages, setImages, setLoading, setPage} from "../../store/photos/actions";
+import Photos from "./photos";
 import {getPhotos} from "../../api/api";
 
 
-class ListPhotosContainer extends React.Component {
+class PhotosContainer extends React.Component {
 
     componentDidMount() {
         getPhotos(this.props.page, this.props.per_page)
@@ -18,7 +18,7 @@ class ListPhotosContainer extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.page !== prevProps.page) {
             getPhotos(this.props.page, this.props.per_page).then(data => {
-                this.props.setImages(data)
+                this.props.setAddedImages(data)
             });
         }
         window.addEventListener('scroll', this.handleScroll);
@@ -49,7 +49,7 @@ class ListPhotosContainer extends React.Component {
 
     render() {
         return (
-            <ListPhotos
+            <Photos
                 images={this.props.images}
             />
         );
@@ -67,8 +67,9 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
     setImages: (images) => dispatch(setImages(images)),
+    setAddedImages: (images) => dispatch(setAddedImages(images)),
     setPage: (page) => dispatch(setPage(page)),
     setLoading: (loading) => dispatch(setLoading(loading))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListPhotosContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(PhotosContainer)

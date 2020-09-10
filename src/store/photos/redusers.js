@@ -16,6 +16,11 @@ const photosReducers = (state = initialState, action) => {
     switch (action.type) {
 
         case 'SET_IMAGES':
+            return {
+                ...state, images: action.payload, loading: true
+            };
+
+        case 'SET_ADDED_IMAGES':
             stateCopy.images = [...state.images, ...action.payload];
             stateCopy.loading = true;
             return stateCopy;

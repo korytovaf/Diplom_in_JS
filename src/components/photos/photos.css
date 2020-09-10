@@ -1,15 +1,15 @@
-.images {
+.photos {
     display: flex;
     flex-wrap: wrap;
 }
 
-.images__wrapper {
+.photos__wrapper {
     display: flex;
     flex-direction: column;
 }
 
 
-.images__add {
+.photos__add {
     width: 80px;
     height: 20px;
     margin: 40px;

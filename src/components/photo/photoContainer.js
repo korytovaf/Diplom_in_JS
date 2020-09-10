@@ -1,45 +1,41 @@
 import React from "react";
 import {connect} from "react-redux";
 import {setImage, setLiked} from "../../store/photos/actions";
-import ImagePage from "./imagePage";
-import {getImagePage, getLiked} from "../../api/api";
+import Photo from "./photo";
+import {getLiked, getPhoto} from "../../api/api";
 
 
-class ImagePageContainer extends React.Component {
-
+class PhotoContainer extends React.Component {
 
     componentDidMount() {
-        getImagePage(this.props.photoId)
+        getPhoto(this.props.photoId)
             .then((data) => {
                 this.props.setImage(data)
-
             })
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.image) {
             if (this.props.image.likes !== prevProps.image.likes)
-                getImagePage(this.props.photoId)
+                getPhoto(this.props.photoId)
                     .then((data) => {
                         this.props.setImage(data)
-
                     })
         }
     }
 
 
     likedClick = () => {
-        getLiked(this.props.photoId, this.props.token)
-            .then((data) => { debugger
-                this.props.setLiked(data.photo.likes)
+        getLiked(this.props.photoId).then((response) => {
+                this.props.setLiked(response.photo.likes)
             });
     }
 
 
     render() {
         return (
-            <ImagePage
+            <Photo
                 image={this.props.image}
                 photoId={this.props.photoId}
                 likedClick={this.likedClick}
@@ -62,4 +58,4 @@ let mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImagePageContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoContainer)

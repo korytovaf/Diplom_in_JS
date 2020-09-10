@@ -1,0 +1,14 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_image {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.profile_data {
+     display: flex;
+     flex-direction: column;
+ }

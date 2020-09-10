@@ -6,19 +6,22 @@ const Header = (props) => {
 
     return (
         <header className='header'>
+            <div className='menu'>
+                <Link to='/'>Home</Link>
+                <Link to='/profile'>Профиль</Link>
+            </div>
 
-            <div>
+            <div className='header_avatar'>
                 {
                     props.profileMi
-                        ? <div>
+                        ? <>
                             <img src={props.profileMi.profile_image.small} alt={props.profileMi.name}/>
                             <div>{props.profileMi.first_name}</div>
-                        </div>
+                        </>
                         : <button onClick={props.getAuthentication} className='button'>Вход</button>
                 }
-
             </div>
-            <Link to='/'>Home</Link>
+
         </header>
     );
 }

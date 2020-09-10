@@ -4,6 +4,7 @@ import Header from "./header";
 import {connect} from "react-redux";
 import {setIsAuth, setProfileMi, setToken} from "../../store/auth/actions";
 import {authenticationUrl, getAuthMi, unsplash} from "../../api/api";
+import {Redirect} from "react-router-dom";
 
 
 class HeaderContainer extends React.Component {
@@ -14,23 +15,25 @@ class HeaderContainer extends React.Component {
 
     code = window.location.search.split('code=')[1]
 
-
     componentDidMount() {
 
         if (this.code) {
             unsplash.auth.userAuthentication(this.code)
                 .then(res => res.json())
                 .then(json => {
-                    unsplash.auth.setBearerToken(json.access_token)
-                    this.props.setToken(json.access_token)
+                    unsplash.auth.setBearerToken(json.access_token);
+                    this.props.setToken(json.access_token);
 
-                    getAuthMi(json.access_token)
+                    getAuthMi()
                         .then(response => {
-                            this.props.setProfileMi(response.data)
+                            this.props.setProfileMi(response)
                             this.props.setIsAuth(true)
+
                         });
                 });
+
         }
+        return <Redirect to={'/'}/>
     }
 
 

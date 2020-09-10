@@ -1,15 +1,4 @@
-import * as axios from 'axios'
-import Unsplash from "unsplash-js";
-
-
-const instance = axios.create({
-    baseURL: 'https://api.unsplash.com/',
-    headers: {
-        Authorization: 'Client-ID CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4',
-        'Set-Cookie': 'widget_session=abc123; SameSite=None; Secure'
-    },
-});
-
+import Unsplash, {toJson} from "unsplash-js";
 
 export const unsplash = new Unsplash({
     accessKey: "CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4",
@@ -24,30 +13,31 @@ export const authenticationUrl = unsplash.auth.getAuthenticationUrl([
 ]);
 
 
-export const getAuthMi = (access_token) => {
-    return instance
-        .get(`me?access_token=${access_token}`)
+
+export const getAuthMi = () => {
+    return unsplash.currentUser.profile()
+        .then(toJson)
         .then(response => response);
 }
 
 
 export const getPhotos = (page = 1, per_page = 10) => {
-    return instance
-        .get(`photos?page=${page}&per_page=${per_page}`)
-        .then(response => response.data)
+    return unsplash.photos.listPhotos(page, per_page, "latest")
+        .then(toJson)
+        .then(json => json);
 }
 
 
-export const getImagePage = (photoId) => {
-    return instance
-        .get(`photos/${photoId}`)
-        .then(response => response.data)
+export const getPhoto = (photoId) => {
+    return unsplash.photos.getPhoto(photoId)
+        .then(toJson)
+        .then(json => json);
 }
 
 
-export const getLiked = (photoId, token) => {
-    return instance
-        .post(`photos/${photoId}/like?access_token=${token}`)
-        .then(response => response.data)
+export const getLiked = (photoId) => {
+    return unsplash.photos.likePhoto(photoId)
+        .then(toJson)
+        .then(json => json);
 }
 

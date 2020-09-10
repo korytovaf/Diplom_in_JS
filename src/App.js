@@ -1,10 +1,10 @@
 import React from "react";
 import {Route} from "react-router-dom";
-import ListPhotoContainer from "./components/photos/ListPhotosContainer";
-import Profile from "./components/profile/profile";
-import ImagePageContainer from "./components/imagePage/imagePageContainer";
+import PhotoContainer from "./components/photos/photosContainer";
+import ImagePageContainer from "./components/photo/photoContainer";
 import './App.css';
 import HeaderContainer from "./components/header/headerConteiner";
+import ProfileContainer from "./components/profile/profileContainer";
 
 
 const App = () => {
@@ -13,12 +13,12 @@ const App = () => {
             <div className='container'>
                 <Route path='/' component={HeaderContainer}/>
                 <main className='main'>
-                    <Route exact path='/' component={ListPhotoContainer}/>
+                    <Route exact path='/' component={PhotoContainer}/>
                     <Route path='/image/:id'
                            render={({match}) => {
                                return <ImagePageContainer photoId={match.params.id}/>
                            }}/>
-                    <Route path='/profile/' component={Profile}/>
+                    <Route path='/profile/' component={ProfileContainer}/>
 
                 </main>
 

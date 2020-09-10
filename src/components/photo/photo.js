@@ -1,9 +1,9 @@
 import React from "react";
-import './Photo.css'
+import './photo.css'
 import Preloader from "../common/Preloader/Preloader";
 import Heart from "../photos/Card/Hart";
 
-const ImagePage = (props) => {
+const Photo = (props) => {
 
     if (!props.image || props.photoId !== props.image.id) {
         return <Preloader />
@@ -21,5 +21,5 @@ const ImagePage = (props) => {
         </div>
     );
 }
-export default ImagePage
+export default Photo
 

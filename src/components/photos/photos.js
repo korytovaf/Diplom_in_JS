@@ -1,18 +1,18 @@
 import React from "react";
-import './ListPhotos.css';
+import './photos.css';
 import Preloader from "../common/Preloader/Preloader";
 import Card from "./Card/Card";
 
 
-const ListPhotos = (props) => {
+const Photos = (props) => {
 
     if (!props.images) {
         return <Preloader/>
     }
 
     return (
-        <div className='images__wrapper'>
-            <ul className='images'>
+        <div className='photos__wrapper'>
+            <ul className='photos'>
 
                 {
                     props.images.map((image) => {
@@ -26,4 +26,4 @@ const ListPhotos = (props) => {
     );
 }
 
-export default ListPhotos
+export default Photos
