@@ -4,20 +4,17 @@ import {connect} from "react-redux";
 import Profile from "./profile";
 
 
+const ProfileContainer = (props) => {
 
-class ProfileContainer extends React.Component {
-
-
-    render() {
-
-        if (!this.props.profileMi) {
-            return <h1>Необходимо авторизироваться</h1>
-        }
-
+    if (!props.profileMi) {
         return (
-            <Profile profileMi={this.props.profileMi} />
+            <h1>Необходимо войти или зарегистрироваться</h1>
         );
     }
+
+    return (
+        <Profile profileMi={props.profileMi}/>
+    );
 }
 
 

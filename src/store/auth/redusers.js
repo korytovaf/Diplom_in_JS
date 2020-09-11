@@ -3,6 +3,7 @@ const initialState = {
     isAuth: false,
     token: '',
     profileMi: null,
+    err: false,
 }
 
 export const authReducers = (state = initialState, action) => {
@@ -24,6 +25,12 @@ export const authReducers = (state = initialState, action) => {
             return {
                 ...state,
                 isAuth: action.payload
+            }
+
+        case 'SET_ERR':
+            return {
+                ...state,
+                err: action.payload
             }
 
         default:

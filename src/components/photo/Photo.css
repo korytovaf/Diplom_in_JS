@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 60px;
     padding: 10px 20px;
     background-color: white;
     margin: 0 auto;
@@ -32,10 +32,20 @@
 }
 
 .photo .photo__like {
+    box-sizing: border-box;
     display: flex;
-    align-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    transition: border 0.3s;
+    cursor: pointer;
 }
 
 .photo .photo__like span {
-     margin-left: 5px;
+     margin-left: 4px;
  }
+
+.photo .photo__like:hover  {
+    border: 1px solid grey;
+  }

@@ -1,0 +1,10 @@
+.alert {
+    position: fixed;
+    top: 60px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    color: white;
+    background-color: #e85369;
+    border-radius: 0 0 10px 10px;
+    transform: translateY(10px);
+}

@@ -13,7 +13,6 @@ export const authenticationUrl = unsplash.auth.getAuthenticationUrl([
 ]);
 
 
-
 export const getAuthMi = () => {
     return unsplash.currentUser.profile()
         .then(toJson)
@@ -41,3 +40,8 @@ export const getLiked = (photoId) => {
         .then(json => json);
 }
 
+export const getUnLiked = (photoId) => {
+    return unsplash.photos.unlikePhoto(photoId)
+        .then(toJson)
+        .then(json => json);
+}

@@ -28,18 +28,15 @@ class HeaderContainer extends React.Component {
                         .then(response => {
                             this.props.setProfileMi(response)
                             this.props.setIsAuth(true)
-
                         });
                 });
-
         }
-        return <Redirect to={'/'}/>
     }
 
 
     render() {
         return (
-            <Header path='/' getAuthentication={this.enterAuthorization} profileMi={this.props.profileMi}/>
+            <Header getAuthentication={this.enterAuthorization} profileMi={this.props.profileMi}/>
         );
     }
 }

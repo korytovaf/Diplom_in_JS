@@ -8,7 +8,7 @@ const Header = (props) => {
         <header className='header'>
             <div className='menu'>
                 <Link to='/'>Home</Link>
-                <Link to='/profile'>Профиль</Link>
+                { props.profileMi && <Link to='/profile'>Профиль</Link> }
             </div>
 
             <div className='header_avatar'>

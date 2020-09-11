@@ -1,18 +1,18 @@
 .card {
-    height: 360px;
-    margin: 16px;
+    height: 270px;
+    margin: 10px;
     border-radius: 20px;
     position: relative;
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
-    flex-basis: 280px;
+    flex-basis: 200px;
     box-shadow: 0 7px 10px rgba(0,0,0,0.5);
-    transition: 0.4s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-2px);
 }
 
 
@@ -66,7 +66,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-content: center;
-    background-color: white;
+    color: white;
     position: relative;
     z-index: 5;
     opacity: 0;
@@ -80,11 +80,11 @@
 .card__content h3 {
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .card .card__content span {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .card .card__like {
@@ -93,6 +93,6 @@
 }
 
 .card .card__like span {
-    margin-left: 8px;
+    margin-left: 4px;
 
 }
