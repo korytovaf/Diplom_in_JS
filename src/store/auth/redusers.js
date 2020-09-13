@@ -4,6 +4,7 @@ const initialState = {
     token: '',
     profileMi: null,
     err: false,
+    activeMenuAvatar: false,
 }
 
 export const authReducers = (state = initialState, action) => {
@@ -31,6 +32,20 @@ export const authReducers = (state = initialState, action) => {
             return {
                 ...state,
                 err: action.payload
+            }
+
+        case 'SET_LOGOUT':
+            return {
+                ...state,
+                isAuth: false,
+                profileMi: null,
+                token: '',
+            }
+
+        case 'SET_ACTIVE_MENU_AVATAR':
+            return {
+                ...state,
+                activeMenuAvatar: action.payload,
             }
 
         default:

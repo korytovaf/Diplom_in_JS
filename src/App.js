@@ -1,5 +1,5 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import PhotoContainer from "./components/photos/photosContainer";
 import ImagePageContainer from "./components/photo/photoContainer";
 import './App.css';
@@ -9,21 +9,20 @@ import ProfileContainer from "./components/profile/profileContainer";
 
 const App = () => {
     return (
-
-            <div className='container'>
-                <Route path='/' component={HeaderContainer}/>
-                <main className='main'>
+        <div className='container'>
+            <HeaderContainer/>
+            <main className='main'>
+                <Switch>
                     <Route exact path='/' component={PhotoContainer}/>
-                    <Route path='/image/:id'
+                    <Route exact path='/image/:id'
                            render={({match}) => {
                                return <ImagePageContainer photoId={match.params.id}/>
                            }}/>
-                    <Route path='/profile/' component={ProfileContainer}/>
-
-                </main>
-
-            </div>
-
+                    <Route exact path='/profile' component={ProfileContainer}/>
+                    <Redirect to='/' />
+                </Switch>
+            </main>
+        </div>
     );
 }
 

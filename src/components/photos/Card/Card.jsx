@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card.css"
-import Heart from "../../../img/Hart";
+import Heart from "../../../img/heart";
 import {Link} from "react-router-dom";
 
 const Card = (props) => {

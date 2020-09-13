@@ -1,7 +1,7 @@
 import React from "react";
 import './photo.css'
 import Preloader from "../common/Preloader/Preloader";
-import Heart from "../../img/Hart";
+import Heart from "../../img/heart";
 import Alert from "../common/alert/alert";
 
 const Photo = ({image, photoId, likedClick, unlikeClick, err}) => {

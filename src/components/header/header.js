@@ -2,23 +2,26 @@ import React from "react";
 import './header.css';
 import {Link} from "react-router-dom";
 
-const Header = (props) => {
+const Header = ({profileMi, clickMenuAvatar, classNames, getAuthentication, setLogout}) => {
 
     return (
         <header className='header'>
             <div className='menu'>
                 <Link to='/'>Home</Link>
-                { props.profileMi && <Link to='/profile'>Профиль</Link> }
+                { profileMi && <Link to='/profile'>Профиль</Link> }
             </div>
 
             <div className='header_avatar'>
                 {
-                    props.profileMi
+                    profileMi
                         ? <>
-                            <img src={props.profileMi.profile_image.small} alt={props.profileMi.name}/>
-                            <div>{props.profileMi.first_name}</div>
+                            <img onClick={clickMenuAvatar} src={profileMi.profile_image.small} alt={profileMi.name}/>
+                            <div>{profileMi.first_name}</div>
+                            <div className={classNames}>
+                                <button onClick={setLogout} className='button__logout'>Выйти</button>
+                            </div>
                         </>
-                        : <button onClick={props.getAuthentication} className='button'>Вход</button>
+                        : <button onClick={getAuthentication} className='button__login'>Вход</button>
                 }
             </div>
 

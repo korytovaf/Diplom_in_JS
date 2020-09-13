@@ -13,6 +13,7 @@ class PhotoContainer extends React.Component {
             .then((data) => {
                 this.props.setImage(data)
             })
+
     }
 
 
@@ -26,9 +27,14 @@ class PhotoContainer extends React.Component {
         }
     }
 
+    setErrActive = (err) => {
+        this.props.setErr(err);
+    }
+
     likedClick = () => {
         if (!this.props.isAuth) {
-            this.props.setErr(true)
+            this.setErrActive(true)
+            setTimeout(this.setErrActive, 3000)
         } else {
             getLiked(this.props.photoId).then((response) => {
                 this.props.setLiked(response.photo.likes)
@@ -38,7 +44,8 @@ class PhotoContainer extends React.Component {
 
     unlikeClick = () => {
         if (!this.props.isAuth) {
-            this.props.setErr(true)
+            this.setErrActive(true)
+            setTimeout(this.setErrActive, 3000)
         } else {
             getUnLiked(this.props.photoId).then((response) => {
                 this.props.setLiked(response.photo.likes)

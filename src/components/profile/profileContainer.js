@@ -2,18 +2,17 @@ import React from "react";
 import {connect} from "react-redux";
 
 import Profile from "./profile";
+import {Redirect} from "react-router";
 
 
-const ProfileContainer = (props) => {
+const ProfileContainer = ({profileMi}) => {
 
-    if (!props.profileMi) {
-        return (
-            <h1>Необходимо войти или зарегистрироваться</h1>
-        );
+    if (!profileMi) {
+        return <Redirect to='/'/>
     }
 
     return (
-        <Profile profileMi={props.profileMi}/>
+        <Profile profileMi={profileMi}/>
     );
 }
 
@@ -22,8 +21,6 @@ let mapStateToProps = (state) => ({
     profileMi: state.auth.profileMi,
 });
 
-let mapDispatchToProps = (dispatch) => ({
-    // setImages: (images) => dispatch(setImages(images)),
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer)
+
+export default connect(mapStateToProps)(ProfileContainer)

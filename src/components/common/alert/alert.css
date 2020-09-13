@@ -7,4 +7,5 @@
     background-color: #e85369;
     border-radius: 0 0 10px 10px;
     transform: translateY(10px);
+    transition: transform 0.2s;
 }
