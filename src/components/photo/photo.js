@@ -17,7 +17,7 @@ const Photo = ({image, photoId, likedClick, unlikeClick, err}) => {
                 <div className='photo__content'>
                     <h3 className='photo__name'>{image.user.name}</h3>
                     <div onClick={!image.liked_by_user ? likedClick : unlikeClick} className='photo__like'>
-                        <Heart width={20} height={18} fill={image.liked_by_user ? 'red' : 'gainsboro'}/>
+                        <Heart width={20} height={18} fill={image.liked_by_user ? '#e75a5a' : 'gainsboro'}/>
                         <span>{image.likes}</span>
                     </div>
                 </div>

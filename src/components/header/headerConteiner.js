@@ -18,6 +18,7 @@ class HeaderContainer extends React.Component {
 
     code = window.location.search.split('code=')[1]
 
+
     componentDidMount() {
 
         if (this.code) {
@@ -34,6 +35,8 @@ class HeaderContainer extends React.Component {
                         });
                 });
         }
+
+
     }
 
 
