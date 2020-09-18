@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from "react-redux";
-
 import {setAddedImages, setImages, setLoading, setPage} from "../../store/photos/actions";
 import Photos from "./photos";
 import {getPhotos} from "../../api/api";

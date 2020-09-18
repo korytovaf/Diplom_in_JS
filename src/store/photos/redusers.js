@@ -1,38 +1,37 @@
 
 const initialState = {
     image: null,
-    images: [],
-    page: 1,
-    per_page: 10,
+    // images: [],
+    // page: 1,
+    // per_page: 10,
     like: false,
     loading: false,
-
-
 }
 
 const photosReducers = (state = initialState, action) => {
-    const stateCopy = {...state};
+    /*const stateCopy = {...state};*/
 
     switch (action.type) {
 
-        case 'SET_IMAGES':
+/*        case 'SET_IMAGES':
             return {
                 ...state, images: action.payload, loading: true
-            };
+            };*/
 
-        case 'SET_ADDED_IMAGES':
+/*        case 'SET_ADDED_IMAGES':
             stateCopy.images = [...state.images, ...action.payload];
             stateCopy.loading = true;
-            return stateCopy;
+            return stateCopy;*/
 
-        case 'SET_LOADING':
+/*        case 'SET_LOADING':
             return {
                 ...state, loading: action.payload,
-            }
-        case 'SET_PAGE':
+            }*/
+
+/*        case 'SET_PAGE':
             return {
                 ...state, page: action.payload,
-            }
+            }*/
 
         case 'SET_IMAGE':
             return {...state, image: action.payload}
