@@ -1,9 +1,11 @@
 import Unsplash, {toJson} from "unsplash-js";
+import Cookies from "js-cookie";
 
 export const unsplash = new Unsplash({
     accessKey: "CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4",
     secret: "aXJI2FFI1YJW0DDPXoxyJJ2YFgG_ni0zAbMGw1kSwO4",
-    callbackUrl: "http://localhost:3000"
+    callbackUrl: "http://localhost:3000",
+    bearerToken: Cookies.get('access_token') !== "undefined" ? Cookies.get('access_token') : '',
 });
 
 

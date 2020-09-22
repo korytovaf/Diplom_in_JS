@@ -7,8 +7,8 @@ export const initialState = {
     per_page: 10,
 }
 
-export const photosHooksReducers = (state, action) => {
 
+export const photosHooksReducers = (state, action) => {
     switch (action.type) {
 
         case 'SET_IMAGES':

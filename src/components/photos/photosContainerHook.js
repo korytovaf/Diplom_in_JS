@@ -9,17 +9,23 @@ const PhotosContainerHook = () => {
     const [state, dispatch] = useReducer(photosHooksReducers, initialState);
     const [onscroll, setOnscroll] = useState(false);
 
+
     useEffect(() => {
+
         getPhotos(state.page, state.per_page)
             .then(data => {
-                dispatch({payload: data, type: 'SET_IMAGES'});
+                    dispatch({payload: data, type: 'SET_IMAGES'});
             });
+
     }, [state.page, state.per_page]);
+
 
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        return () => window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.addEventListener('scroll', handleScroll)
+        };
     });
 
 
@@ -34,7 +40,7 @@ const PhotosContainerHook = () => {
         if (scrollBottom - clientHeight >= 500) {
             setOnscroll(false)
         }
-    };
+    }
 
 
     useEffect(() => {

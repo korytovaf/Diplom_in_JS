@@ -1,7 +1,5 @@
-
 const initialState = {
     isAuth: false,
-    token: '',
     profileMi: null,
     err: false,
     activeMenuAvatar: false,
@@ -39,7 +37,6 @@ export const authReducers = (state = initialState, action) => {
                 ...state,
                 isAuth: false,
                 profileMi: null,
-                token: '',
             }
 
         case 'SET_ACTIVE_MENU_AVATAR':
