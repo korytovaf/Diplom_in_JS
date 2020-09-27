@@ -1,5 +1,5 @@
 import React from "react";
-import './photo.css'
+import './Photo.css'
 import Preloader from "../common/Preloader/Preloader";
 import Heart from "../../img/heart";
 import Alert from "../common/alert/alert";
