@@ -25,5 +25,6 @@ const Photo = ({image, photoId, likedClick, unlikeClick, err}) => {
         </>
     );
 }
+
 export default Photo
 
