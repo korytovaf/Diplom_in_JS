@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 export const unsplash = new Unsplash({
     accessKey: "CCmUYdJ0XloimmGTAqnof5xFLlD27kNQiDo5pNEnVQ4",
     secret: "aXJI2FFI1YJW0DDPXoxyJJ2YFgG_ni0zAbMGw1kSwO4",
-    callbackUrl: "http://localhost:3000",
+    callbackUrl: "urn:ietf:wg:oauth:2.0:oob",
     bearerToken: Cookies.get('access_token') !== "undefined" ? Cookies.get('access_token') : '',
 });
 
@@ -22,7 +22,7 @@ export const getAuthMi = () => {
 }
 
 
-export const getPhotos = (page = 1, per_page = 10) => {
+export const getPhotos = (page = 1, per_page = 20) => {
     return unsplash.photos.listPhotos(page, per_page, "latest")
         .then(toJson)
         .then(json => json);
