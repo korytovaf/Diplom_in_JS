@@ -4,7 +4,7 @@ export const PhotosContext = createContext();
 export const initialState = {
     images: [],
     page: 1,
-    per_page: 10,
+    per_page: 20,
 }
 
 
