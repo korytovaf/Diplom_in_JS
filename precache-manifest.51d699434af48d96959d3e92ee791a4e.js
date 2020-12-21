@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "545dc1bd446d8276f944f16d3590dc5b",
+    "revision": "011812f013a149e8c64dffe744838f6a",
     "url": "/Diplom_in_JS/index.html"
   },
   {
-    "revision": "b6f14d67e49794321641",
+    "revision": "70e7ad6d370949d903f4",
     "url": "/Diplom_in_JS/static/css/main.40c9e18d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Diplom_in_JS/static/js/2.2cc910b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b6f14d67e49794321641",
-    "url": "/Diplom_in_JS/static/js/main.b4c91416.chunk.js"
+    "revision": "70e7ad6d370949d903f4",
+    "url": "/Diplom_in_JS/static/js/main.58acb5af.chunk.js"
   },
   {
     "revision": "eae8e845e014802c893d",
