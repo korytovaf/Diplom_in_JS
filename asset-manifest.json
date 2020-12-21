@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Diplom_in_JS/static/css/main.40c9e18d.chunk.css",
+    "main.js": "/Diplom_in_JS/static/js/main.b4c91416.chunk.js",
+    "main.js.map": "/Diplom_in_JS/static/js/main.b4c91416.chunk.js.map",
+    "runtime-main.js": "/Diplom_in_JS/static/js/runtime-main.daf8d1a1.js",
+    "runtime-main.js.map": "/Diplom_in_JS/static/js/runtime-main.daf8d1a1.js.map",
+    "static/js/2.2cc910b0.chunk.js": "/Diplom_in_JS/static/js/2.2cc910b0.chunk.js",
+    "static/js/2.2cc910b0.chunk.js.map": "/Diplom_in_JS/static/js/2.2cc910b0.chunk.js.map",
+    "index.html": "/Diplom_in_JS/index.html",
+    "precache-manifest.3eaeab419353f14ac9a975c1c72de1e5.js": "/Diplom_in_JS/precache-manifest.3eaeab419353f14ac9a975c1c72de1e5.js",
+    "service-worker.js": "/Diplom_in_JS/service-worker.js",
+    "static/css/main.40c9e18d.chunk.css.map": "/Diplom_in_JS/static/css/main.40c9e18d.chunk.css.map",
+    "static/js/2.2cc910b0.chunk.js.LICENSE.txt": "/Diplom_in_JS/static/js/2.2cc910b0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.daf8d1a1.js",
+    "static/js/2.2cc910b0.chunk.js",
+    "static/css/main.40c9e18d.chunk.css",
+    "static/js/main.b4c91416.chunk.js"
+  ]
+}
