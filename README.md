@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Дипломная работа «JavaScript с нуля»
+https://korytovaf.github.io/Diplom_in_JS/
 
 In the project directory, you can run:
 
